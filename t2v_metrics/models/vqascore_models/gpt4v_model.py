@@ -31,7 +31,7 @@ class GPT4VModel(VQAScoreModel):
     """A wrapper for the GPT4V models"""
     def __init__(self,
                  model_name='gpt-4-turbo',
-                 device='cuda',
+                 device='mps',
                  cache_dir=None,
                  openai_key=None,
                  top_logprobs=2):

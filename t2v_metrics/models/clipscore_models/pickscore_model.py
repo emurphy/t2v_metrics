@@ -13,7 +13,7 @@ class PickScoreModel(ScoreModel):
     "A wrapper for PickScore models"
     def __init__(self,
                  model_name='pickscore-v1',
-                 device='cuda',
+                 device='mps',
                  cache_dir=HF_CACHE_DIR):
         assert model_name in PICKSCORE_MODELS
         super().__init__(model_name=model_name,

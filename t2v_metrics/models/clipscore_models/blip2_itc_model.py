@@ -17,7 +17,7 @@ class BLIP2ITCScoreModel(ScoreModel):
     "A wrapper for BLIP-2 ITCScore models"
     def __init__(self,
                  model_name='blip2-itc',
-                 device='cuda',
+                 device='mps',
                  cache_dir=HF_CACHE_DIR):
         assert model_name in BLIP2_ITC_MODELS, f"Model name must be one of {BLIP2_ITC_MODELS.keys()}"
         os.environ['TORCH_HOME'] = cache_dir
@@ -52,7 +52,7 @@ class BLIP2ITCScoreModel(ScoreModel):
         return image
     
     @torch.no_grad()
-    @torch.autocast(device_type='cuda', dtype=torch.float16)
+    # @torch.autocast(device_type='cuda', dtype=torch.float16)
     def forward(self,
                 images: List[str],
                 texts: List[str]) -> torch.Tensor:

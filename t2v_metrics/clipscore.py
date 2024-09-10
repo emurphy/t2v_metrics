@@ -9,7 +9,7 @@ from .models.clipscore_models import list_all_clipscore_models, get_clipscore_mo
 class CLIPScore(Score):
     def prepare_scoremodel(self,
                            model='openai:ViT-L/14',
-                           device='cuda',
+                           device='mps',
                            cache_dir=HF_CACHE_DIR):
         return get_clipscore_model(
             model,

@@ -16,7 +16,7 @@ def image_loader(image_path):
 class ScoreModel(ABC):
     def __init__(self,
                  model_name='clip-flant5-xxl',
-                 device='cuda',
+                 device='mps',
                  cache_dir=HF_CACHE_DIR):
         self.model_name = model_name
         self.device = device
