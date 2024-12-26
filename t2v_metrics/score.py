@@ -14,7 +14,7 @@ class Score(nn.Module):
 
     def __init__(self,
                  model: str,
-                 device: str='mps',
+                 device: str='cuda',
                  cache_dir: str=HF_CACHE_DIR,
                  **kwargs):
         """Initialize the ScoreModel

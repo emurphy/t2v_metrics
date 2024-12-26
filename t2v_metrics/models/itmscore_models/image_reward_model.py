@@ -15,7 +15,7 @@ class ImageRewardScoreModel(ScoreModel):
     "A wrapper for ImageReward ITMScore (finetuned on human preference) models"
     def __init__(self,
                  model_name='image-reward-v1',
-                 device='mps',
+                 device='cuda',
                  cache_dir=HF_CACHE_DIR):
         assert model_name in IMAGE_REWARD_MODELS, f"Model name must be one of {IMAGE_REWARD_MODELS.keys()}"
         os.environ['TORCH_HOME'] = cache_dir

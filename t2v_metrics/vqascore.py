@@ -9,7 +9,7 @@ from .models.vqascore_models import list_all_vqascore_models, get_vqascore_model
 class VQAScore(Score):
     def prepare_scoremodel(self,
                            model='clip-flant5-xxl',
-                           device='mps',
+                           device='cuda',
                            cache_dir=HF_CACHE_DIR,
                            **kwargs):
         return get_vqascore_model(

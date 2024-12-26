@@ -12,7 +12,7 @@ class CLIPScoreModel(ScoreModel):
     "A wrapper for OpenCLIP models (including openAI's CLIP, OpenCLIP, DatacompCLIP)"
     def __init__(self,
                  model_name='openai:ViT-L-14',
-                 device='mps',
+                 device='cuda',
                  cache_dir=HF_CACHE_DIR):
         assert model_name in CLIP_MODELS
         super().__init__(model_name=model_name,
